@@ -4,7 +4,7 @@ Shuffle and pick elements from arrays.
 
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/shuffle/review.yml)
 ![Version](https://pursuit.purescript.org/packages/purescript-shuffle/badge)
-![Quality](https://img.shields.io/codacy/grade/...)
+![Quality](https://img.shields.io/codacy/grade/01012f44da174bdbac24204f1ff7b096)
 
 ## Installing
 
