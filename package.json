@@ -1,5 +1,13 @@
 {
   "packageManager": "yarn@4.1.1",
+  "repository": "https://github.com/JoelLefkowitz/shuffle",
+  "homepage": "https://joellefkowitz.github.io/shuffle",
+  "keywords": [
+    "shuffle",
+    "pick",
+    "random",
+    "effect"
+  ],
   "scripts": {
     "postinstall": "husky",
     "format": "prettier . --write && purs-tidy format-in-place src test",
@@ -8,6 +16,9 @@
   "resolutions": {
     "string-width": "4.2.3",
     "strip-ansi": "^6.0.1"
+  },
+  "dependencies": {
+    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "cspell": "^8.0.0",
@@ -30,8 +41,5 @@
       "Functional"
     ],
     "lifecycle": "Alpha"
-  },
-  "dependencies": {
-    "shuffle-array": "^1.0.1"
   }
 }
