@@ -11,7 +11,7 @@ package:
 
   dependencies:
     - arrays: ">=7.0.0 <8.0.0"
-    - effect: ">=6.0.0 <7.0.0"
+    - effect: ">=4.0.0 <5.0.0"
     - maybe: ">=6.0.0 <7.0.0"
     - prelude: ">=6.0.1 <7.0.0"
 
@@ -25,9 +25,6 @@ package:
       - foldable-traversable
       - spec
       - spec-node
-
-    pedanticPackages: true
-    strict: true
 
 workspace:
   packageSet:
