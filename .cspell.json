@@ -1,0 +1,29 @@
+{
+  "language": "en",
+  "dictionaries": [
+    "aws",
+    "bash",
+    "en-gb",
+    "fullstack",
+    "misc",
+    "softwareTerms"
+  ],
+  "ignorePaths": [".git"],
+  "words": [
+    "bumpversion",
+    "codacy",
+    "corepack",
+    "dhall",
+    "foldl",
+    "giphy",
+    "joellefkowitz",
+    "lefkowitz",
+    "outfile",
+    "purescript",
+    "purs",
+    "purty",
+    "spago",
+    "trufflehog",
+    "uncurry"
+  ]
+}

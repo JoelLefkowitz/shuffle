@@ -1,0 +1,11 @@
+.DS_Store
+.psc-ide-port
+.psci_modules/
+.spago/
+.spec-results
+.yarn/
+bower_components/
+generated-docs/
+node_modules/
+output/
+yarn-error.log
