@@ -21,8 +21,9 @@ You can shuffle an array and the result will be contained inside an `Effect`:
 ```purs
 import Effect.Shuffle (shuffle)
 
-shuffle ["a", "b", "c"]
-["b", "c", "a"]
+do
+  ... <- shuffle ["a", "b", "c"]
+  -- ["b", "c", "a"]
 ```
 
 You can similarly pick an element from an array at random:
@@ -32,8 +33,9 @@ You can similarly pick an element from an array at random:
 ```purs
 import Effect.Shuffle (pick)
 
-pick ["a", "b", "c"]
-Just "b"
+do
+  ... <- pick ["a", "b", "c"]
+  -- Just "b"
 ```
 
 You can provide a fallback directly with `pickOr`:
@@ -43,8 +45,9 @@ You can provide a fallback directly with `pickOr`:
 ```purs
 import Effect.Shuffle (pickOr)
 
-pickOr "" ["a", "b", "c"]
-"b"
+do
+  ... <- pickOr "" ["a", "b", "c"]
+  -- "b"
 ```
 
 If the underlying type is a `Monoid` there is an suitable fallback automatically:
@@ -57,8 +60,9 @@ import Effect.Shuffle (pickMonoid)
 strings :: Array String
 strings = []
 
-pickMonoid strings
-""
+do
+  ... <- pickMonoid strings
+  -- ""
 ```
 
 If you have a `NonEmptyArray` you can pick an element without needing a fallback:
@@ -69,8 +73,9 @@ If you have a `NonEmptyArray` you can pick an element without needing a fallback
 import Data.Array.NonEmpty (singleton)
 import Effect.Shuffle (pickNonEmpty)
 
-pickNonEmpty $ singleton "a"
-"a"
+do
+  ... <- pickNonEmpty $ singleton "a"
+  -- "a"
 ```
 
 ## Documentation
