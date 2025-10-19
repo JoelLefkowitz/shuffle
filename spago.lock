@@ -12,10 +12,19 @@
               "effect": ">=4.0.0 <5.0.0"
             },
             {
+              "foldable-traversable": ">=6.0.0 <7.0.0"
+            },
+            {
               "maybe": ">=6.0.0 <7.0.0"
             },
             {
-              "prelude": ">=6.0.1 <7.0.0"
+              "prelude": ">=3.0.0 <7.0.0"
+            },
+            {
+              "random": ">=6.0.0 <7.0.0"
+            },
+            {
+              "unfoldable": ">=6.0.0 <7.0.0"
             }
           ],
           "build_plan": [
@@ -32,14 +41,17 @@
             "functions",
             "functors",
             "identity",
+            "integers",
             "invariant",
             "maybe",
             "newtype",
             "nonempty",
+            "numbers",
             "orders",
             "partial",
             "prelude",
             "profunctor",
+            "random",
             "refs",
             "safe-coerce",
             "st",
@@ -135,7 +147,7 @@
     },
     "package_set": {
       "address": {
-        "registry": "62.2.7"
+        "registry": "62.3.1"
       },
       "compiler": ">=0.15.15 <0.16.0",
       "content": {
@@ -414,7 +426,7 @@
         "node-human-signals": "1.0.0",
         "node-net": "5.1.0",
         "node-os": "5.1.0",
-        "node-path": "5.0.0",
+        "node-path": "5.0.1",
         "node-process": "11.2.0",
         "node-readline": "8.1.1",
         "node-sqlite3": "8.0.0",
@@ -529,6 +541,7 @@
         "selection-foldable": "0.2.0",
         "selective-functors": "1.0.1",
         "semirings": "7.0.0",
+        "shuffle": "1.1.0",
         "signal": "13.0.0",
         "simple-emitter": "3.0.1",
         "simple-i18n": "2.0.1",
@@ -1214,8 +1227,8 @@
     },
     "node-path": {
       "type": "registry",
-      "version": "5.0.0",
-      "integrity": "sha256-pd82nQ+2l5UThzaxPdKttgDt7xlsgIDLpPG0yxDEdyE=",
+      "version": "5.0.1",
+      "integrity": "sha256-ePOElFamHkffhwJcS0Ozq4A14rflnkasFU6X2B8/yXs=",
       "dependencies": [
         "effect"
       ]
@@ -1438,6 +1451,15 @@
         "newtype",
         "prelude",
         "tuples"
+      ]
+    },
+    "random": {
+      "type": "registry",
+      "version": "6.0.0",
+      "integrity": "sha256-CJ611a35MPCE7XQMp0rdC6MCn76znlhisiCRgboAG+Q=",
+      "dependencies": [
+        "effect",
+        "integers"
       ]
     },
     "record": {

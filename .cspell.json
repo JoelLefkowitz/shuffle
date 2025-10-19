@@ -16,6 +16,7 @@
     "dhall",
     "foldl",
     "giphy",
+    "indexl",
     "joellefkowitz",
     "lefkowitz",
     "mempty",
@@ -26,6 +27,7 @@
     "purty",
     "spago",
     "trufflehog",
-    "uncurry"
+    "uncurry",
+    "unfoldable"
   ]
 }

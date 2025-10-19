@@ -2,7 +2,7 @@
 
 Shuffle and pick elements from arrays.
 
-![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/shuffle/review.yml)
+![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/shuffle/review.yaml)
 ![Version](https://pursuit.purescript.org/packages/purescript-shuffle/badge)
 ![Quality](https://img.shields.io/codacy/grade/01012f44da174bdbac24204f1ff7b096)
 
@@ -16,7 +16,7 @@ spago install shuffle
 
 You can shuffle an array and the result will be contained inside an `Effect`:
 
-`shuffle ∷ ∀ a. Array a → Effect (Array a)`
+`shuffle ∷ ∀ f a. Foldable f ⇒ Unfoldable f ⇒ f a → Effect (f a)`
 
 ```purs
 import Effect.Shuffle (shuffle)
@@ -25,63 +25,52 @@ shuffle ["a", "b", "c"]
 ["b", "c", "a"]
 ```
 
-Often when you want pick an element from an array at random the underlying type will be a `Monoid`. This means that if the array is empty there is an suitable fallback:
+You can similarly pick an element from an array at random:
 
-`pick ∷ ∀ a. Monoid a ⇒ Array a → Effect a`
+`pick ∷ ∀ f a. Foldable f ⇒ Unfoldable f ⇒ f a → Effect (Maybe a)`
 
 ```purs
 import Effect.Shuffle (pick)
 
 pick ["a", "b", "c"]
-"b"
+Just "b"
 ```
 
-```purs
-pick []
-""
-```
+You can provide a fallback directly with `pickOr`:
 
-Alternatively you can provide a fallback directly with `pickOr`:
-
-`pickOr ∷ ∀ a. a → Array a → Effect a`
+`pickOr ∷ ∀ f a. Foldable f ⇒ Unfoldable f ⇒ a → f a → Effect a`
 
 ```purs
 import Effect.Shuffle (pickOr)
 
-pickOr 0 [1, 2, 3]
-2
+pickOr "" ["a", "b", "c"]
+"b"
 ```
+
+If the underlying type is a `Monoid` there is an suitable fallback automatically:
+
+`pickMonoid ∷ ∀ f a. Foldable f ⇒ Unfoldable f ⇒ Monoid a ⇒ f a → Effect a`
 
 ```purs
-pickOr 0 []
-0
+import Effect.Shuffle (pickMonoid)
+
+strings :: Array String
+strings = []
+
+pickMonoid strings
+""
 ```
 
-If you want to explicitly receive a `Maybe` you can use `pickMaybe`:
-
-`pickMaybe ∷ ∀ a. Array a → Effect (Maybe a)`
-
-```purs
-import Effect.Shuffle (pickMaybe)
-
-pickMaybe ["a", "b", "c"]
-Just "b"
-```
-
-```purs
-pickMaybe []
-Nothing
-```
-
-If your array is non-empty then you can use `pickNonEmpty`:
+If you have a `NonEmptyArray` you can pick an element without needing a fallback:
 
 `pickNonEmpty ∷ ∀ a. NonEmptyArray a → Effect a`
 
 ```purs
+import Data.Array.NonEmpty (singleton)
 import Effect.Shuffle (pickNonEmpty)
 
-pickNonEmpty (cons' "a" [ "b", "c" ])
-"b"
+pickNonEmpty $ singleton "a"
+"a"
 ```
 
 ## Documentation

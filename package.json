@@ -10,15 +10,12 @@
   ],
   "scripts": {
     "postinstall": "husky",
-    "format": "prettier . --write && purs-tidy format-in-place src test",
-    "lint": "cspell . --dot --gitignore && eslint . --fix && trufflehog3"
+    "lint": "cspell . --dot --gitignore && eslint . --fix --no-error-on-unmatched-pattern && trufflehog3",
+    "format": "prettier . --write && purs-tidy format-in-place src test"
   },
   "resolutions": {
     "string-width": "4.2.3",
     "strip-ansi": "^6.0.1"
-  },
-  "dependencies": {
-    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "cspell": "^8.0.0",
