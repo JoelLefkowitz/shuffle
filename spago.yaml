@@ -3,7 +3,7 @@ package:
   description: Shuffle and pick elements from arrays.
 
   publish:
-    version: 1.1.0
+    version: 2.0.0
     license: MIT
     location:
       githubOwner: joellefkowitz
